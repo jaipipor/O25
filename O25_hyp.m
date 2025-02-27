@@ -5,27 +5,21 @@ function [a,bb,Rrs_N]=O25_hyp(l,Rrs,geom_old,geom_new)
 %
 % [a,bb,Rrs_N]=O25_hyp(l,Rrs,geom_old,geom_new)
 % Input arguments:
-%   l       · nlx1 vector: wavelengths (nm)
-%   Rrs     · nlx1 vector: Remote-sensing reflectance associated to the above wavelengths (sr)
-%   geom_old· 3x1  vector: a triplet representing (1) the sun zenith angle (º), the view zenith angle (º) and the relative azimuth (º) of the original Rrs observation
-%   geom_new· 3x1  vector: a triplet representing (1) the sun zenith angle
-%   (º), the view zenith angle (º) and the relative azimuth (º) of the corrected Rrs
+%   l       Â· nlx1 vector: wavelengths (nm)
+%   Rrs     Â· nlx1 vector: Remote-sensing reflectance associated to the above wavelengths (sr)
+%   geom_oldÂ· 3x1  vector: a triplet representing (1) the sun zenith angle (Âº), the view zenith angle (Âº) and the relative azimuth (Âº) of the original Rrs observation
+%   geom_newÂ· 3x1  vector: a triplet representing (1) the sun zenith angle
+%   (Âº), the view zenith angle (Âº) and the relative azimuth (Âº) of the corrected Rrs
 % Output arguments:
-%   a        · nlx1 vector: total absorption coefficient (m^{-1})
-%   bb       · nlx1 vector: total backscattering coefficient (m^{-1})
-%   Rrs_N    · nlx1 vector: Rrs referred at geom_new
+%   a        Â· nlx1 vector: total absorption coefficient (m^{-1})
+%   bb       Â· nlx1 vector: total backscattering coefficient (m^{-1})
+%   Rrs_N    Â· nlx1 vector: Rrs referred at geom_new
 %
 % Dependencies:
 %    ./Aux_functions/get_aw_bbw.m
 %    ./Aux_functions/get_G_4D.m
 %
 % Jaime Pitarch, CNR-GOS, 07-Feb-2025.
-
-% Example run:
-% my_Ed =[0.00089262    0.0069923     0.018696    0.0023898
-%        1.65e-06   9.9975e-05   0.00075004   5.8526e-06
-%        0.058626      0.14587      0.14568     0.035567];
-%    PAR = PAR_from_Ed_380_443_490_560(my_Ed);
 
 data = get_aw_bbw(l);
 aw=data(:,1);
