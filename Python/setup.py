@@ -1,13 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name="o25",
+    name="o25",  # PyPI package name
     version="0.1.0",
-    packages=["o25"],
-    install_requires=[
-        "numpy>=1.21",  # Wide but safe lower bound
-        "scipy>=1.7"     # Covers most Python 3.8+ installations
-    ],
-    python_requires=">=3.8",  # Casts a wide compatibility net
-    description="Simple bidirectional Rrs correction for water remote sensing",
+    packages=find_packages(),  # Auto-finds 'Python' as package
+    package_dir={"": "."},     # Look in root directory
+    install_requires=["numpy", "scipy"],
 )
