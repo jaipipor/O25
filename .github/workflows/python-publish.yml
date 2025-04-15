@@ -1,0 +1,39 @@
+name: Publish o25 to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write  # Required for PyPI trusted publishing
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"  # Build with your current version
+
+      - name: Install build tools
+        run: pip install build twine
+
+      - name: Build package
+        run: |
+          cd Python
+          python -m build
+
+      - name: Verify compatibility
+        run: |
+          cd Python
+          python -c "from o25 import O25_hyp; print('Import successful!')"
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: "Python/dist/"
+          verbose: true  # Helps debugging
