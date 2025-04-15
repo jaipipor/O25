@@ -31,7 +31,7 @@ def get_aw_bbw(l):
     # Load and cache data on first call
     if _cached_interpolator is None:
         current_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-        data_file = current_dir.parent / 'data' / 'abs_scat_seawater_20d_35PSU_20230922_short.txt'
+        data_file = current_dir.parent / '../data' / 'abs_scat_seawater_20d_35PSU_20230922_short.txt'
         
         try:
             kk = np.loadtxt(data_file, comments='%')  # Skip lines starting with %

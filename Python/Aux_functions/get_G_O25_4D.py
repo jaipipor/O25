@@ -29,7 +29,7 @@ def get_G_O25_4D():
         
         # Get path to data files
         current_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-        data_folder = current_dir.parent / 'data'
+        data_folder = current_dir.parent / '../data'
         
         
         # Load each coefficient matrix
