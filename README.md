@@ -7,6 +7,6 @@ The remote-sensing reflectance (R_rs) varies with the illumination and viewing g
 | Version | Location | Key Differences |
 |---------|----------|-----------------|
 | MATLAB  | `/MATLAB` | Original algorithm |
-| Python  | `/Python` | Open-source, NumPy/SciPy port |
+| Python  | `/o25` | Open-source, NumPy/SciPy port |
 
 **Inquiries to**: jaime.pitarch@cnr.it.
