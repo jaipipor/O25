@@ -1,7 +1,5 @@
+README.md
 setup.py
-./Aux_functions/__init__.py
-./Aux_functions/get_G_O25_4D.py
-./Aux_functions/get_aw_bbw.py
 Aux_functions/__init__.py
 Aux_functions/get_G_O25_4D.py
 Aux_functions/get_aw_bbw.py
