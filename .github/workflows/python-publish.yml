@@ -20,19 +20,15 @@ jobs:
         run: pip install build twine
 
       - name: Build package
-        run: |
-          cd o25
-          python -m build
+        run: python -m build
 
       - name: Verify compatibility
-        run: |
-          cd o25
-          python -c "from o25 import O25_hyp; print('Import successful!')"
+        run: python -c "from o25 import o25_hyp; print('Import successful!')"
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
-          packages-dir: "o25/dist/"
+          packages-dir: dist/
           verbose: true
