@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,7 +20,7 @@ jobs:
       - name: Install build tools
         run: pip install build twine
 
-      - name: Build package
+      - name: Build the package
         run: python -m build
 
       - name: Verify compatibility
@@ -30,5 +31,4 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
-          packages-dir: dist/
           verbose: true
