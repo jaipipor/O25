@@ -20,8 +20,11 @@ jobs:
       - name: Install build tools
         run: pip install build twine
 
+      - name: Install dependencies
+        run: pip install .  # Ejecutado desde la raíz del repo: O25/
+
       - name: Build the package
-        run: python -m build
+        run: python -m build  # También desde la raíz
 
       - name: Verify compatibility
         run: python -c "from o25 import O25_hyp; print('Import successful!')"
