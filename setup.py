@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="o25",
-    version="0.1.0",
+    version="0.1.8",
     author="Jaime Pitarch",
     author_email="jaime.pitarch@cnr.it",
     description="Bidirectional correction and IOP retrieval for aquatic optics",
