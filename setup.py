@@ -6,10 +6,11 @@ setup(
     author="Jaime Pitarch",
     author_email="jaime.pitarch@cnr.it",
     description="Bidirectional correction and IOP retrieval for aquatic optics",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/jaipipor/O25",
-    packages=find_packages(include=["o25", "o25.*"]),
+    packages=find_packages(),
+    package_dir={"": "."},     # Look in root directory
     install_requires=[
         "numpy",
         "scipy"

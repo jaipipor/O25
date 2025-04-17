@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
-from Aux_functions.get_aw_bbw import get_aw_bbw
-from Aux_functions.get_G_O25_4D import get_G_O25_4D
+from o25.Aux_functions import get_aw_bbw
+from o25.Aux_functions.get_G_O25_4D import get_G_O25_4D
 
 def O25_hyp(l, Rrs, geom_old, geom_new):
     """
