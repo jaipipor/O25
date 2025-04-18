@@ -1,9 +1,76 @@
-# O25: Bidirectional modelling of remote-sensing reflectance and IOP retrieval
-**Abstract**
+## 📆 O25: Retrieval of IOPs and Bidirectional Correction for In Situ and Satellite Data
 
-The remote-sensing reflectance (R_rs) varies with the illumination and viewing geometry, an effect referred to as anisotropy, bidirectionality, or bidirectional reflectance distribution function (BRDF). In the aquatic environment, bidirectionality arises from the combined effect of the anisotropic downwelling illumination, scattered by water and particles in varying proportions as a function of the scattering angle, modulated by the two-way interaction with the sea surface. For remote sensing applications, it is desirable that the reflectance only depends on the inherent optical properties (IOPs). This process implies transforming R_rs into a “corrected” or “normalized” R_rs,N , referred to the sun at the zenith and the sensor zenith angle at the nadir. A previous study (D’Alimonte et al., 2025) compared published correction methods, showing the superior performance of a method by Lee et al. (2011, henceforth L11). This article presents a new method starting from L11’s analytical framework, named O25 after OLCI, the Ocean Color sensor on Sentinel-3 satellite. O25 has been calibrated with a recently published synthetic dataset tailored to its needs (Pitarch and Brando, 2024). A comparative assessment using the same datasets as in D’Alimonte et al. (2025) concludes that O25 outperforms L11 and hence all pre-existing methods. O25 includes complementary operational features: (1) applicability range, (2) uncertainty estimates, and (3) a demonstrated reversibility of the bidirectional correction. O25’s look-up tables are generic to any in situ and satellite sensors, including hyperspectral ones. For sensors such as Landsat/Sentinel 2, the IOPs retrieval component of O25 can easily be reformulated.
+The remote-sensing reflectance (R_rs) varies with the illumination and viewing geometry, an effect referred to as anisotropy, bidirectionality, or bidirectional reflectance distribution function (BRDF). In the aquatic environment, bidirectionality arises from the combined effect of the anisotropic downwelling illumination, scattered by water and particles in varying proportions as a function of the scattering angle, modulated by the two-way interaction with the sea surface. For remote sensing applications, it is desirable that the reflectance only depends on the inherent optical properties (IOPs). This process implies transforming R_rs into a “corrected” or “normalized” R_rs,N , referred to the sun at the zenith and the sensor zenith angle at the nadir. A previous study (D’Alimonte et al., 2025) compared published correction methods, showing the superior performance of a method by Lee et al. (2011, henceforth L11). This article presents a new method starting from L11’s analytical framework, named **O25** after OLCI, the Ocean Color sensor on Sentinel-3 satellite. O25 has been calibrated with a recently published synthetic dataset tailored to its needs (Pitarch and Brando, 2024). A comparative assessment using the same datasets as in D’Alimonte et al. (2025) concludes that O25 outperforms L11 and hence all pre-existing methods. O25 includes complementary operational features: (1) applicability range, (2) uncertainty estimates, and (3) a demonstrated reversibility of the bidirectional correction. O25’s look-up tables are generic to any in situ and satellite sensors, including hyperspectral ones. For sensors such as Landsat/Sentinel 2, the IOPs retrieval component of O25 can easily be reformulated.
 
-**Code**
+---
+
+## 🚀 Main Features
+
+- **IOP Retrieval**: Estimates absorption and backscattering coefficients from Rrs.
+- **Bidirectional Correction**: Shifts Rrs across different sun-sensor geometries.
+- **Uncertainty Estimation**: [UPCOMING FEATURE. SO FAR, DEMONSTRATED IN THE PAPER].
+- **Reversibility**: Rrs can be transformed back to the original geometry with negligible errors.
+- **Compatibility**: Works with any in situ or mid-resolution satellite sensor (OLCI, MODIS, etc.).
+
+---
+
+## 🛠️ Installation
+
+Install the latest version of O25 from PyPI:
+
+```bash
+pip install o25
+```
+
+---
+
+## 📚 Basic Usage
+
+```python
+from o25 import O25_hyp
+
+# Define inputs
+l = [...]  # Wavelengths in nm
+Rrs = [...]  # Remote sensing reflectance
+geom_old = [...]  # Original geometry: [solar zenith angle, viewing zenith angle, relative azimuth angle]
+geom_new = [...]  # New geometry
+
+# Run O25
+a, bb, Rrs_N = O25_hyp(l, Rrs, geom_old, geom_new)
+```
+
+---
+
+## 📄 Documentation
+
+For a detailed description of the functions and parameters, see the [full documentation](https://github.com/jaipipor/O25/wiki).
+[EMPTY SO FAR, TO BE FILLED SOON. PLEASE REFER TO THE DOCUMENTED CODE AND THE PAPER]
+---
+
+## 🧪 Examples
+
+You can find usage examples in the [`examples/`](https://github.com/jaipipor/O25/tree/main/examples) directory.
+[EMPTY SO FAR]
+---
+
+## 📝 License
+
+This project is licensed under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.html).
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request to suggest improvements or report bugs.
+
+---
+
+## 📢 Contact
+
+For questions or comments, feel free to contact me via [your email or contact link].
+
+
+**Code versions**
 | Version | Location | Key Differences |
 |---------|----------|-----------------|
 | MATLAB  | `/MATLAB` | Original algorithm |
