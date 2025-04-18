@@ -78,6 +78,3 @@ Contributions are welcome! Please open an issue or submit a pull request to sugg
 ## 📢 Contact
 
 Inquiries to jaime.pitarch@cnr.it.
-ree to contact me via [your email or contact link].
-
-
