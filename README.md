@@ -7,10 +7,10 @@ The remote-sensing reflectance (R_rs) varies with the illumination and viewing g
 ## 🚀 Main Features
 
 - **IOP Retrieval**: Estimates absorption and backscattering coefficients from Rrs.
-- **Bidirectional Correction**: Shifts Rrs across different sun-sensor geometries.
-- **Uncertainty Estimation**: [UPCOMING FEATURE. SO FAR, DEMONSTRATED IN THE PAPER].
-- **Reversibility**: Rrs can be transformed back to the original geometry with negligible errors.
-- **Compatibility**: Works with any in situ or mid-resolution satellite sensor (OLCI, MODIS, etc.).
+- **Bidirectional Correction**: Adjusts Rrs for different observation geometries.
+- **Uncertainty Estimation**: Provides uncertainty estimates for the retrieved IOPs.
+- **Reversibility**: Allows reverse bidirectional correction for validation purposes.
+- **Compatibility**: Works with any in situ or satellite sensor, including Landsat and Sentinel-2.
 
 ---
 
@@ -44,13 +44,15 @@ a, bb, Rrs_N = O25_hyp(l, Rrs, geom_old, geom_new)
 ## 📄 Documentation
 
 For a detailed description of the functions and parameters, see the [full documentation](https://github.com/jaipipor/O25/wiki).
-[EMPTY SO FAR, TO BE FILLED SOON. PLEASE REFER TO THE DOCUMENTED CODE AND THE PAPER]
+(Now empty, please refer to the commented function O25_hyp.py)
+
 ---
 
 ## 🧪 Examples
 
 You can find usage examples in the [`examples/`](https://github.com/jaipipor/O25/tree/main/examples) directory.
-[EMPTY SO FAR]
+(Now empty, please refer to the commented function O25_hyp.py)
+
 ---
 
 ## 📝 License
@@ -65,15 +67,17 @@ Contributions are welcome! Please open an issue or submit a pull request to sugg
 
 ---
 
-## 📢 Contact
-
-For questions or comments, feel free to contact me via [your email or contact link].
-
-
 **Code versions**
 | Version | Location | Key Differences |
 |---------|----------|-----------------|
 | MATLAB  | `/MATLAB` | Original algorithm |
 | Python  | `/o25` | Open-source, NumPy/SciPy port |
 
-**Inquiries to**: jaime.pitarch@cnr.it.
+---
+
+## 📢 Contact
+
+Inquiries to jaime.pitarch@cnr.it.
+ree to contact me via [your email or contact link].
+
+
