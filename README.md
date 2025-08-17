@@ -44,7 +44,8 @@ a, bb, Rrs_N = O25_hyp(l, Rrs, geom_old, geom_new)
 ## 📄 Reference paper
 
 Jaime Pitarch, Vittorio Ernesto Brando, Marco Talone, Constant Mazeran, Davide D'Alimonte, Tamito Kajiyama, Ewa Kwiatkowska, David Dessailly, Juan Ignacio Gossn,
-Analytical modeling and correction of the ocean colour bidirectional reflectance across water types, Remote Sensing of Environment, https://doi.org/10.1016/j.rse.2025.114920.
+*Analytical modeling and correction of the ocean colour bidirectional reflectance across water types*, Remote Sensing of Environment, https://doi.org/10.1016/j.rse.2025.114920.
+
 ---
 
 ## 📊 Documentation
