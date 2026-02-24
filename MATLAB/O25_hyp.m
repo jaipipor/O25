@@ -62,7 +62,7 @@ C1=G0w*bbw0+G0p*(al0+bbw0)-2*R5*(al0+bbw0);
 C2=G0p+G1p-R5;
 
 bbp0=(sqrt(C1^2-4*C2*C0)-C1)/(2*C2);
-bbp=bbp0*(l(i_5)./l).^eta;
+bbp=bbp0*(nanmean(l(i_5))./l).^eta;
 bb=bbp+bbw;
 
 D0=G1w*bbw.^2+G1p*bbp.^2;
