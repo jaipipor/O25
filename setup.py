@@ -10,6 +10,8 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/jaipipor/O25",
     packages=find_packages(),
+    include_package_data=True,
+    package_data={"o25": ["data/bh4/*.mat"]},
     package_dir={"": "."},     # Look in root directory
     install_requires=[
         "numpy",

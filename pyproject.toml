@@ -18,3 +18,5 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/jaipipor/O25"
 Repository = "https://github.com/jaipipor/O25"
+[tool.setuptools.package-data]
+o25 = ["data/bh4/*.mat"]
