@@ -92,9 +92,3 @@ def test_incompatible_models_are_rejected(tmp_path, mutation, message):
         load_model(write_model(tmp_path, raw))
 
 
-def test_public_frontend_remains_unconnected():
-    rrs = np.full(BH4_BANDS_NM.size, 0.005)
-    r = o25.correct(BH4_BANDS_NM, rrs, (30, 20, 90))
-    assert r.uncertainty_status == "not_implemented"
-    assert not r.has_uncertainty
-    assert r.u is None and r.u_rel is None and r.k is None

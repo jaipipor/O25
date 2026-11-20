@@ -114,7 +114,3 @@ def test_outputs_are_double_and_read_only():
         assert not a.flags.writeable
 
 
-def test_public_frontend_remains_unconnected():
-    r = o25.correct(BH4_BANDS_NM, np.full(12, .005), (30, 20, 90))
-    assert r.uncertainty_status == "not_implemented"
-    assert r.u is None and r.u_rel is None and r.k is None

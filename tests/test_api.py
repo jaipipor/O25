@@ -21,11 +21,11 @@ def test_default_target_and_named_outputs_match_legacy_function():
     np.testing.assert_allclose(r.a, a, rtol=0, atol=0)
     np.testing.assert_allclose(r.bb, bb, rtol=0, atol=0)
     np.testing.assert_allclose(r.Rrs, Rrs_n, rtol=0, atol=0)
-    assert r.uncertainty_status == "not_implemented"
-    assert not r.has_uncertainty
-    assert r.u is None
-    assert r.u_rel is None
-    assert r.k is None
+    assert r.uncertainty_status == "available_native_olci"
+    assert r.has_uncertainty
+    assert r.u is not None
+    assert r.u_rel is not None
+    assert r.k in (1, 2, 3, 4)
 
 
 def test_arbitrary_target_runs_o25_without_bh4():

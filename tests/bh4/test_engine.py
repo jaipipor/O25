@@ -49,4 +49,4 @@ def test_geometry_batch_size_must_match():
 
 def test_public_frontend_remains_unconnected():
     r=o25.correct(BH4_BANDS_NM,np.full(12,.005),(30,20,90))
-    assert r.uncertainty_status=='not_implemented' and r.u is None
+    assert r.uncertainty_status=='available_native_olci' and r.u is not None
