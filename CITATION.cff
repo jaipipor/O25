@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: O25
+message: "If you use O25, cite the software and the associated paper."
+type: software
+authors:
+  - family-names: Pitarch
+    given-names: Jaime
+preferred-citation:
+  type: article
+  title: Analytical modeling and correction of the ocean colour bidirectional reflectance across water types
+  doi: 10.1016/j.rse.2025.114920

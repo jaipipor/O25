@@ -2,8 +2,8 @@
 from __future__ import annotations
 from dataclasses import dataclass
 import numpy as np
-from .O25_hyp import O25_hyp
-from .applicability import Applicability, assess_applicability
+from .model import O25Model
+from ._applicability import Applicability, assess_applicability
 from .bands import BAND_TOLERANCE_NM
 from .bh4 import BH4Result, uncertainty_from_rrs
 
@@ -63,7 +63,7 @@ def correct(wl: object, Rrs: object, g0: object, g1: object|None=None, *,
     if wl.size!=Rrs.size: raise ValueError(f"wl and Rrs must have the same length; got {wl.size} and {Rrs.size}.")
     app=assess_applicability(wl,g0,g1,tol_nm)
     if not app.o25_available: raise ValueError(app.o25_message)
-    a,bb,Rrs_n=O25_hyp(wl.copy(),Rrs.copy(),app.source_geometry.copy(),app.target_geometry.copy())
+    a,bb,Rrs_n=O25Model()._correct_o25(wl,Rrs,app.source_geometry,app.target_geometry)
     a=np.asarray(a,dtype=np.float64); bb=np.asarray(bb,dtype=np.float64); Rrs_n=np.asarray(Rrs_n,dtype=np.float64)
 
     if not app.bh4_available:

@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from o25.applicability import assess_applicability
+from o25._applicability import assess_applicability
 from o25.bands import BH4_BANDS_NM
 
 G0 = (30, 20, 90)
