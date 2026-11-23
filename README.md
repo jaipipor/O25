@@ -35,3 +35,9 @@ Pitarch et al., *Analytical modeling and correction of the ocean colour bidirect
 ## License
 
 GPL-3.0. Contact: jaime.pitarch@cnr.it
+
+## Compatibility
+
+O25 0.2 uses a class-based numerical core and the `o25.correct(...)`
+frontend. Scripts using the historical `O25_hyp(...)` function remain
+supported through a compatibility wrapper.

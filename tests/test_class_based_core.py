@@ -30,3 +30,30 @@ def test_core_no_longer_contains_monolithic_o25_hyp():
 def test_compatibility_wrapper_calls_class_based_model():
     source = inspect.getsource(o25.O25_hyp)
     assert "default_model().correct" in source
+
+
+def test_normal_runtime_does_not_import_procedural_reference():
+    """A clean O25 process must not load the procedural migration reference."""
+    import subprocess
+    import sys
+
+    code = """
+import sys
+import o25
+
+o25.correct(
+    [443, 490, 560, 665],
+    [0.004, 0.005, 0.006, 0.003],
+    (30, 20, 120),
+    (0, 0, 0),
+)
+
+assert "tests.reference.procedural_o25" not in sys.modules
+assert "tests.reference.procedural_iop" not in sys.modules
+assert "tests.reference.procedural_coefficients" not in sys.modules
+"""
+
+    subprocess.run(
+        [sys.executable, "-c", code],
+        check=True,
+    )
